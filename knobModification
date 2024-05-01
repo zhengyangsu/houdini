@@ -1,0 +1,15 @@
+import hou
+#knob change based on slider and context options
+sel_node = hou.selectedNodes()
+context = hou.contextOption("renderlayer")
+node = hou.pwd()
+selector = node.evalParm("lightrig2")
+
+
+
+if (context) == "lineupCam_head":
+    return 4
+elif (context) == "lineupCam_body":
+    return 4
+else:
+    return selector
